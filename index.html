@@ -21,7 +21,7 @@
   .btns{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0}
   .meta{font-size:14px;color:var(--muted)}
   .controls{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-top:1px solid var(--border)}
-  .arrow{cursor:pointer;background:#fff;color:#000;border:none;border-radius:999px;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:44px;line-height:1;}
+  .arrow{cursor:pointer;background:#fff;color:#000;border:none;border-radius:999px;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:44px;line-height:1;}
   .dots span{display:inline-block;width:8px;height:8px;border-radius:999px;background:#3a4361;margin:0 3px}
   .dots span.active{background:var(--blue)}
   @media(max-width:880px){.grid{grid-template-columns:1fr} .art img{max-width:420px;margin:0 auto}}
@@ -130,16 +130,16 @@
 .grid.full .art{ display:none; }
 .grid.full .info{ grid-column: 1 / -1; }
 .card.allpage{ overflow-y:auto; max-height: calc(100vh - 160px); }
-.thumb-grid{ display:grid; grid-template-columns: repeat(9, 72px); gap:6px; justify-content:flex-start; }
-.thumb-btn{ border:1px solid var(--border); background:var(--card); border-radius:10px; padding:0; width:72px; height:72px; overflow:hidden; cursor:pointer; box-shadow:var(--shadow); }
+.thumb-grid{ display:grid; grid-template-columns: repeat(12, 76px); gap:6px; justify-content:flex-start; }
+.thumb-btn{ border:1px solid var(--border); background:var(--card); border-radius:10px; padding:0; width:76px; height:76px; overflow:hidden; cursor:pointer; box-shadow:var(--shadow); }
 .thumb-btn img{ width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width: 900px){
-  .thumb-grid{ grid-template-columns: repeat(6, 64px); gap:6px; }
-  .thumb-btn{ width:64px; height:64px; }
+  .thumb-grid{ grid-template-columns: repeat(9, 68px); gap:6px; }
+  .thumb-btn{ width:68px; height:68px; }
 }
 @media (max-width: 640px){
-  .thumb-grid{ grid-template-columns: repeat(4, 56px); gap:6px; }
-  .thumb-btn{ width:56px; height:56px; }
+  .thumb-grid{ grid-template-columns: repeat(4, 60px); gap:6px; }
+  .thumb-btn{ width:60px; height:60px; }
 }
 
 /* --- Media-style arrows (rewind/fast-forward) --- */
@@ -1087,7 +1087,7 @@ document.addEventListener('DOMContentLoaded',function(){ app.init(); });
     // Update label
     try{
       var s = currentSong();
-      btn.textContent = " Apple Music");
+      btn.textContent = " Apple Music — " + ((s && s.title) ? s.title : "Morning Bloom");
     }catch(_){}
   }
   // Retry until we have a real apple URL in place
